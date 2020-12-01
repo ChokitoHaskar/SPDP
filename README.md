@@ -23,6 +23,19 @@ Sprint 1:
 - Agen bisa menambahkan Permintaan (done)
 - Agen bisa melihat riwayat Permintaan sesuai inputan periode waktu (50%, bisa melihat tapi tidak sesuai inputan periode waktu)
 
-Sprint 2:
+Sprint 2 (on-progress) :
+- Manager bisa mengajukan data stok pupuk
+- Manager bisa mengedit data stok pupuk
+- Manager bisa melihat rekap data stok pupuk
+- Manager bisa mengubah transaksi pupuk harian
+- Manager bisa mengubah status jam operasional
+- Manager bisa melihat status jam operasional
+- Manager bisa mengajukan transaksi pengiriman pupuk
+- Manager bisa melihat rekap data transaksi pengiriman pupuk
+- Agen bisa melihat data stok pupuk
+- Agen bisa melihat status jam operasional
+- Agen bisa melihat status pengiriman pupuk
+- Driver bisa melihat riwayat transaksi pengiriman pupuk
+- Driver bisa mengubah status pengiriman pupuk
 
 Sprint 3:
