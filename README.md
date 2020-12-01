@@ -1,6 +1,6 @@
 # SPDP
 
-Cara buat bisa cloning projek ini di-PC ente :
+Cara agar bisa cloning projek ini di-PC ente :
 https://alfinchandra4.medium.com/catatan-laravel-cloning-project-orang-8f3d5f0947e1
 
 Data user buat bisa login sesuai role, wajib jalanin db:seed
