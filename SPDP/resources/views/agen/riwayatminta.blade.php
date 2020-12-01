@@ -5,7 +5,6 @@
 @section('sidebar')
 <div class="bg-dark text-light pt-5" id="sidebar-wrapper">
     <div class="list-group list-group-flush">
-        <a href=" {{ route('manager.stok') }} " class="list-group-item list-group-item-action bg-dark text-light">Stok Pupuk</a>
         <a href=" {{ route('agen.rekap') }} " class="list-group-item list-group-item-action bg-dark text-light">Riwayat Transaksi</a>
     </div>
 </div>

@@ -5,7 +5,6 @@
 @section('sidebar')
 <div class="bg-dark text-light pt-5" id="sidebar-wrapper">
     <div class="list-group list-group-flush">
-        <a href=" {{ route('manager.stok') }} " class="list-group-item list-group-item-action bg-dark text-light">Stok Pupuk</a>
         <a href=" {{ route('agen.rekap') }} " class="list-group-item list-group-item-action bg-dark text-light">Riwayat Transaksi</a>
     </div>
 </div>
@@ -16,7 +15,7 @@
     <form action=" {{ route('agen.creating') }} " class="mx-auto w-50" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
-            <input type="hidden" name="id_pengguna" value="">
+            <input type="hidden" name="id_pengguna" value="2">
             <div class="form-group">
                 <label for="nama_pupuk">Nama Pupuk</label>
                 <select class="form-control" id="nama_pupuk" name="nama_pupuk">
@@ -31,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="pupuk_diminta">Jumlah pupuk yang diminta</label>
-                <input type="number" class="form-control" id="pupuk_diminta" name="pupuk_diminta" aria-describedby="emailHelp" placeholder="Masukkkan jumlah pupuk yang diinginkan">
+                <input required type="number" class="form-control" id="pupuk_diminta" name="pupuk_diminta" aria-describedby="emailHelp" placeholder="Masukkkan jumlah pupuk yang diinginkan">
             </div>
             <input type="submit" name="" id="" value="Tambah" class="btn btn-primary">
         </div>

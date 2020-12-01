@@ -34,6 +34,6 @@
         </table>
     </div>
     <button class="btn btn-dark float-right mr-3 mt-4">
-        Tambah Stok
+        Tambah Stok <br> (on-progress)
     </button>
 @endsection

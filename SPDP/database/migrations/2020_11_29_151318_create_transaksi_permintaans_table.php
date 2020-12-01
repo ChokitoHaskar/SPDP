@@ -18,7 +18,7 @@ class CreateTransaksiPermintaansTable extends Migration
             $table->integer('id_pengguna');
             $table->string('nama_pupuk');
             $table->string('jumlah_permintaan');
-            $table->date('d-m-Y', 'tanggal_transaksi');
+            $table->date('tanggal_transaksi');
             $table->string('status_verifikasi')->default('Belum Diverifikasi');
             $table->timestamps();
         });
