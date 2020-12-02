@@ -20,12 +20,29 @@
     <link href="{{asset('./css/app.css')}}" rel="stylesheet">
     {{-- Custom CSS --}}
     <link href="{{asset('./css/simple-sidebar.css')}}" rel="stylesheet">
+    <link href="{{asset('./css/customerror.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
-            @yield('sidebar')
+            <div class="bg-dark text-light" id="sidebar-wrapper">
+            @can('isManager')
+            <h1 class=" text-center pt-3">Manager</h1>
+            <div class="list-group list-group-flush pt-4">
+                <a href=" {{ route('manager.permintaan') }} " class="list-group-item list-group-item-action bg-dark text-light">Transaksi Permintaan</a>
+                <a href=" {{ route('manager.stok') }} " class="list-group-item list-group-item-action bg-dark text-light">Stok Pupuk</a>
+                <a href=" {{ route('manager.rekap') }} " class="list-group-item list-group-item-action bg-dark text-light">Riwayat Transaksi</a>
+            </div>
+            @elsecan('isAgen')
+            <h1 class=" text-center pt-3">Agen</h1>
+            <div class="list-group list-group-flush pt-4">
+                <a href=" {{ route('agen.tambah') }} " class="list-group-item list-group-item-action bg-dark text-light">Transaksi Permintaan</a>
+                <a href=" {{ route('agen.rekap') }} " class="list-group-item list-group-item-action bg-dark text-light">Riwayat Permintaan</a>
+                <a href=" {{ route('agen.stok') }} " class="list-group-item list-group-item-action bg-dark text-light">Stok Pupuk</a>
+            </div>
+            @endcan
+            </div>
             <!-- /#sidebar-wrapper -->
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">

@@ -19,18 +19,16 @@
             <div class="form-group">
                 <label for="nama_pupuk">Nama Pupuk</label>
                 <select class="form-control" id="nama_pupuk" name="nama_pupuk">
-                  <option>Urea</option>
-                  <option>ZA (Zwavelzure Amonium)</option>
-                  <option>SP-36 (super phosphate)</option>
-                  <option>KCl (Kalium Klorida)</option>
-                  <option>NPK (Nitrogen Phospate Kalium)</option>
-                  <option>Dolomite (Kapur Karbonat)</option>
-                  <option>ZK (Zwavelzure Kali)</option>
+                @foreach ($pupuks as $pupuk)
+                    <option> {{ $pupuk->nama_pupuk }} </option>
+                @endforeach
                 </select>
             </div>
             <div class="form-group">
                 <label for="pupuk_diminta">Jumlah pupuk yang diminta</label>
-                <input required type="number" class="form-control" id="pupuk_diminta" name="pupuk_diminta" aria-describedby="emailHelp" placeholder="Masukkkan jumlah pupuk yang diinginkan">
+                <input required type="number" class="form-control" id="pupuk_diminta" name="pupuk_diminta" placeholder="Masukkkan jumlah pupuk yang diinginkan" min="0"
+                oninput="this.value = !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null"
+                oninvalid="this.setCustomValidity('Jumlah pupuk yang diminta wajib diisi')">
             </div>
             <input type="submit" name="" id="" value="Tambah" class="btn btn-primary">
         </div>

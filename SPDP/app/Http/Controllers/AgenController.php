@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\StokPupuk;
 use App\Models\TransaksiPermintaan;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -16,7 +18,8 @@ class AgenController extends Controller
 
     public function Minta_Lagi()
     {
-        return view('agen.halamanminta');
+        $pupuks = StokPupuk::all();
+        return view('agen.halamanminta', compact('pupuks'));
     }
 
     public function Tambah(Request $request)
@@ -31,5 +34,11 @@ class AgenController extends Controller
         );
 
         return redirect('agen/RiwayatMinta');
+    }
+
+    public function Stok_Pupuk()
+    {
+        $pupuks = StokPupuk::all();
+        return view('agen/stokpupuk', compact('pupuks'));
     }
 }

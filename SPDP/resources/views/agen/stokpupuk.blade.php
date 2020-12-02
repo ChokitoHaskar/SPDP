@@ -23,7 +23,4 @@
             </tbody>
         </table>
     </div>
-    <a href="TambahStok" class="btn btn-dark float-right mr-3 mt-4">
-        Tambah Data
-    </a>
 @endsection

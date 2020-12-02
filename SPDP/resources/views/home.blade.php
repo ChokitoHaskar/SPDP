@@ -23,15 +23,6 @@
                             <span class="btn btn-warning">Driver</span>
                         @endcan
                     </p>
-                    <p>
-                        @can('isManager')
-                        <a href="/manager/PermintaanPupuk" class="btn btn-success">Tekan untuk melanjutkan</a>
-                        @elsecan('isAgen')
-                        <a href="/agen/RiwayatMinta" class="btn btn-primary">Tekan untuk melanjutkan</a>
-                        @else
-                        <a href="/manager/PermintaanPupuk">Go into home</a>
-                        @endcan
-                    </p>
                 </div>
             </div>
         </div>

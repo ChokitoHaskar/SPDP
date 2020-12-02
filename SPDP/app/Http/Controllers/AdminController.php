@@ -40,4 +40,18 @@ class AdminController extends Controller
         $pupuks = StokPupuk::all();
         return view('manager/stokpupuk', ['pupuks' => $pupuks]);
     }
+
+    public function Tambah_Stok()
+    {
+        $pupuks = StokPupuk::all();
+        return view('manager.tambahpupuk', ['pupuks' => $pupuks]);
+    }
+
+    public function Tambah(Request $request)
+    {
+        DB::table('stok_pupuks')->where('id_pupuk', $request->nama_pupuk)->increment(
+            'jumlah_stok', $request->jumlah_pupuk
+        );
+        return redirect('manager/StokPupuk');
+    }
 }

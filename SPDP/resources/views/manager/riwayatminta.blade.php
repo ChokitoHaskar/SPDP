@@ -2,16 +2,6 @@
 
 @section('title', 'Permintaan Pupuk')
 
-@section('sidebar')
-<div class="bg-dark text-light pt-5" id="sidebar-wrapper">
-    <div class="list-group list-group-flush">
-        <a href=" {{ route('manager.permintaan') }} " class="list-group-item list-group-item-action bg-dark text-light">Transaksi Permintaan</a>
-        <a href=" {{ route('manager.stok') }} " class="list-group-item list-group-item-action bg-dark text-light">Stok Pupuk</a>
-        <a href=" {{ route('manager.rekap') }} " class="list-group-item list-group-item-action bg-dark text-light">Riwayat Transaksi</a>
-    </div>
-</div>
-@endsection
-
 @section('content')
 <div class="mx-4">
     <table class="table mt-4 mx-auto">
