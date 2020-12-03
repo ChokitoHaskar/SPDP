@@ -29,12 +29,12 @@ Sprint 2 (on-progress) :
 - Manager bisa mengubah transaksi pupuk harian (on-progress)
 - Manager bisa mengubah status jam operasional (on-progress)
 - Manager bisa melihat status jam operasional (on-progress)
-- Manager bisa mengajukan transaksi pengiriman pupuk (on-progress)
-- Manager bisa melihat rekap data transaksi pengiriman pupuk (on-progress)
+- Manager bisa mengajukan transaksi pengiriman pupuk (50%, dalam transaksi pengiriman masih belum menyertakan id_agen)
+- Manager bisa melihat rekap data transaksi pengiriman pupuk (done)
 - Agen bisa melihat data stok pupuk (done)
 - Agen bisa melihat status jam operasional (on-progress)
-- Agen bisa melihat status pengiriman pupuk (on-progress)
-- Driver bisa melihat riwayat transaksi pengiriman pupuk (on-progress)
+- Agen bisa melihat status pengiriman pupuk (75%, bisa melihat tapi tidak sesuai id agen)
+- Driver bisa melihat riwayat transaksi pengiriman pupuk (done)
 - Driver bisa mengubah status pengiriman pupuk (on-progress)
 
 Sprint 3:
