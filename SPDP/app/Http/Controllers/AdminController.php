@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\StokPupuk;
 use App\Models\TransaksiPermintaan;
+use App\Models\TransaksiPengiriman;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -53,5 +55,32 @@ class AdminController extends Controller
             'jumlah_stok', $request->jumlah_pupuk
         );
         return redirect('manager/StokPupuk');
+    }
+
+    public function Transaksi_Pengiriman()
+    {
+        $pengirimans = TransaksiPengiriman::all();
+        return view('manager/Pengiriman', compact('pengirimans'));
+    }
+
+    public function Tambah_Pengiriman()
+    {
+        $pupuks = StokPupuk::all();
+        $users = User::where('role', 'driver')->get();
+        return view('manager/TambahPengiriman', compact('pupuks'), compact('users'));
+    }
+
+    public function Menambah_Pengiriman(Request $request)
+    {
+        DB::table('transaksi_pengirimen')->insert(
+            [
+                'nama_driver' => $request->nama_driver,
+                'nama_pupuk' => $request->nama_pupuk,
+                'jumlah_pengiriman' => $request->jumlah_pupuk,
+                'tanggal_pengiriman' => $request->date
+            ]
+        );
+
+        return redirect('manager/PengirimanPupuk');
     }
 }

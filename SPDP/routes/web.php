@@ -28,6 +28,10 @@ Route::middleware('can:isManager')->prefix('manager')->name('manager.')->group(f
     Route::get('/StokPupuk', 'AdminController@Stok_Pupuk')->name('stok');
     Route::get('/TambahStok', 'AdminController@Tambah_Stok')->name('tambahstok');
     Route::post('UpdatingStok', 'AdminController@Tambah')->name('updatingstok');
+    // Pengelolaan pengiriman pupuk
+    Route::get('/PengirimanPupuk', 'AdminController@Transaksi_Pengiriman')->name('pengiriman');
+    Route::get('/TambahPengiriman', 'AdminController@Tambah_Pengiriman')->name('tambahpengiriman');
+    Route::post('CreatingPengiriman', 'AdminController@Menambah_Pengiriman')->name('menambahpengiriman');
 });
 
 // Agen
@@ -38,6 +42,13 @@ Route::middleware('can:isAgen')->prefix('agen')->name('agen.')->group(function()
     Route::post('create', 'AgenController@Tambah')->name('creating');
     // Melihat stok pupuk
     Route::get('/LiatStok', 'AgenController@Stok_Pupuk')->name('stok');
+    // Melihat pengiriman pupuk
+    Route::get('/LiatPengiriman', 'AgenController@Liat_Pengiriman')->name('pengiriman');
+});
+
+Route::middleware('can:isDriver')->prefix('driver')->name('driver.')->group(function() {
+    // Pengiriman
+    Route::get('/LiatPengiriman', 'AgenController@Liat_Pengiriman')->name('pengiriman');
 });
 
 Auth::routes([

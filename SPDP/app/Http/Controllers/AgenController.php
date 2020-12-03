@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\StokPupuk;
 use App\Models\TransaksiPermintaan;
 use Illuminate\Http\Request;
+use App\Models\TransaksiPengiriman;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -40,5 +41,11 @@ class AgenController extends Controller
     {
         $pupuks = StokPupuk::all();
         return view('agen/stokpupuk', compact('pupuks'));
+    }
+
+    public function Liat_Pengiriman()
+    {
+        $pengirimans = TransaksiPengiriman::all();
+        return view('agen/Pengiriman', compact('pengirimans'));
     }
 }
