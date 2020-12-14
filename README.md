@@ -38,3 +38,12 @@ Sprint 2 (on-progress) :
 - Driver bisa mengubah status pengiriman pupuk (on-progress)
 
 Sprint 3:
+- Pengelolaan akun Manager (on-progress)
+- Pengelolaan akun Driver (on-progress)
+- Pengelolaan akun Agen (on-progress)
+- Login Manager (done)
+- Login Driver (done) 
+- Login Agen (done)
+- Registrasi Agen (on-progress)
+- Menambah akun Driver (on-progress)
+- Verifikasi akun Agen (on-progress)
