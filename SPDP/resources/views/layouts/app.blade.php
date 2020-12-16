@@ -20,35 +20,48 @@
     <link href="{{asset('./css/app.css')}}" rel="stylesheet">
     {{-- Custom CSS --}}
     <link href="{{asset('./css/simple-sidebar.css')}}" rel="stylesheet">
+    <link href="{{asset('./css/custom.css')}}" rel="stylesheet">
     <link href="{{asset('./css/customerror.css')}}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: rgba(0,0,0,0.18)">
     <div id="app">
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
-            <div class="bg-dark text-light" id="sidebar-wrapper">
             @can('isManager')
+            <div style="background-color: #3E2F5B" class="text-light" id="sidebar-wrapper">
             <h1 class=" text-center pt-3">Manager</h1>
             <div class="list-group list-group-flush pt-4">
-                <a href=" {{ route('manager.permintaan') }} " class="list-group-item list-group-item-action bg-dark text-light">Transaksi Permintaan</a>
-                <a href=" {{ route('manager.stok') }} " class="list-group-item list-group-item-action bg-dark text-light">Stok Pupuk</a>
-                <a href=" {{ route('manager.rekap') }} " class="list-group-item list-group-item-action bg-dark text-light">Riwayat Transaksi</a>
+                <a href=" {{ route('manager.permintaan') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Transaksi Permintaan</a>
+                <a href=" {{ route('manager.stok') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Stok Pupuk</a>
+                <a href=" {{ route('manager.pengiriman') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Transaksi Pengiriman</a>
+                <a href=" {{ route('manager.rekap') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Riwayat Permintaan</a>
+                <a href=" {{ route('manager.profile') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Profil Saya</a>
             </div>
             @elsecan('isAgen')
+            <div style="background-color: #0F5257" class="text-light" id="sidebar-wrapper">
             <h1 class=" text-center pt-3">Agen</h1>
             <div class="list-group list-group-flush pt-4">
-                <a href=" {{ route('agen.tambah') }} " class="list-group-item list-group-item-action bg-dark text-light">Transaksi Permintaan</a>
-                <a href=" {{ route('agen.rekap') }} " class="list-group-item list-group-item-action bg-dark text-light">Riwayat Permintaan</a>
-                <a href=" {{ route('agen.stok') }} " class="list-group-item list-group-item-action bg-dark text-light">Stok Pupuk</a>
+                <a href=" {{ route('agen.tambah') }} " style="background-color: #0F5257" class="list-group-item list-group-item-action text-light">Transaksi Permintaan</a>
+                <a href=" {{ route('agen.rekap') }} " style="background-color: #0F5257" class="list-group-item list-group-item-action text-light">Riwayat Permintaan</a>
+                <a href=" {{ route('agen.stok') }} " style="background-color: #0F5257" class="list-group-item list-group-item-action text-light">Stok Pupuk</a>
+                <a href=" {{ route('agen.pengiriman') }} " style="background-color: #0F5257" class="list-group-item list-group-item-action text-light">Transaksi Pengiriman Pupuk</a>
+                <a href=" {{ route('agen.profile') }} " style="background-color: #0F5257" class="list-group-item list-group-item-action text-light">Profil Saya</a>
+            </div>
+            @elsecan('isDriver')
+            <div style="background-color: #588B8B" class=" text-light" id="sidebar-wrapper">
+            <h1 class=" text-center pt-3">Driver</h1>
+            <div class="list-group list-group-flush pt-4">
+                <a href=" {{ route('driver.pengiriman') }} " style="background-color: #588B8B" class="list-group-item list-group-item-action text-light">Transaksi Pengiriman Pupuk</a>
+                <a href=" {{ route('driver.profile') }} " style="background-color: #588B8B" class="list-group-item list-group-item-action text-light">Profil Saya</a>
             </div>
             @endcan
             </div>
             <!-- /#sidebar-wrapper -->
             <div id="page-content-wrapper">
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+                <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #433f9e">
                     <div class="container">
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            SPDP
+                            CV Damai Indah Lestari
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>

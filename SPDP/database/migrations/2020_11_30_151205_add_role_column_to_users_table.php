@@ -15,7 +15,7 @@ class AddRoleColumnToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
         //TAMBAHKAN KOLOM ROLE DENGAN TIPE ENUM DAN MEMILIKI BEBERAPA PILIHAN ROLE
-        $table->enum('role',  ['manager', 'agen', 'driver'])->after('password');
+        $table->enum('role',  ['agen', 'manager', 'driver'])->after('password');
         });
     }
 

@@ -8,6 +8,7 @@ use App\Models\TransaksiPengiriman;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -66,8 +67,8 @@ class AdminController extends Controller
     public function Tambah_Pengiriman()
     {
         $pupuks = StokPupuk::all();
-        $users = User::where('role', 'driver')->get();
-        return view('manager/TambahPengiriman', compact('pupuks'), compact('users'));
+        $drivers = User::where('role', 'driver')->get();
+        return view('manager/TambahPengiriman', compact('pupuks'), compact('drivers'));
     }
 
     public function Menambah_Pengiriman(Request $request)
@@ -77,10 +78,17 @@ class AdminController extends Controller
                 'nama_driver' => $request->nama_driver,
                 'nama_pupuk' => $request->nama_pupuk,
                 'jumlah_pengiriman' => $request->jumlah_pupuk,
-                'tanggal_pengiriman' => $request->date
+                'tanggal_pengiriman' => $request->date,
+                'alamat_pengiriman' => $request->address
             ]
         );
 
         return redirect('manager/PengirimanPupuk');
+    }
+
+    public function Show_Profile()
+    {
+        $profiles = User::where('id', Auth::user()->id)->get();
+        return view('page/profil', compact('profiles'));
     }
 }

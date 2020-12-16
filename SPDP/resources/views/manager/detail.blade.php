@@ -8,6 +8,7 @@
     <div class="card mx-auto w-50">
         <div class="card-body">
             <h2 class="text-center font-weight-bold">DETAIL</h2>
+            <p>Nama Agen : {{ $permintaan->nama_agen}} </p>
             <p>Nama Pupuk : {{ $permintaan->nama_pupuk}} </p>
             <p>Total : {{ $permintaan->jumlah_permintaan}} karung </p>
             <p>Tanggal : {{ $permintaan->tanggal_transaksi}} </p>

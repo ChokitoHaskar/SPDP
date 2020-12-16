@@ -2,4 +2,4 @@
 
 @section('title', __('Forbidden'))
 @section('code', '403')
-@section('message', 'Anda tidak berwenang')
+@section('message', 'Anda tidak memiliki wewenang mengakses page ini')

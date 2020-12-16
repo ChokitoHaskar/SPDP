@@ -14,10 +14,11 @@
                 <th class="col-2">Status Verifikasi</th>
             </tr>
         </thead>
+        <?php $rowNum = 1; ?>
         <tbody class="text-center border-bottom">
             @foreach ($permintaans as $permintaan)
                 <tr>
-                    <td> {{ $permintaan->id_transaksi }} </td>
+                    <td><?php echo $rowNum; $rowNum++ ?></td>
                     <td> {{ $permintaan->nama_pupuk }} </td>
                     <td> {{ $permintaan->jumlah_permintaan }} </td>
                     <td> {{ $permintaan->tanggal_transaksi }} </td>

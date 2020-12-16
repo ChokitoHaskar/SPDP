@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'HomeController@Index');
 
 
-// Admin
+// Manager
 Route::middleware('can:isManager')->prefix('manager')->name('manager.')->group(function (){
     // Pengelolaan permintaan Agen
     Route::get('/PermintaanPupuk', 'AdminController@Transaksi_Permintaan')->name('permintaan');
@@ -32,6 +32,8 @@ Route::middleware('can:isManager')->prefix('manager')->name('manager.')->group(f
     Route::get('/PengirimanPupuk', 'AdminController@Transaksi_Pengiriman')->name('pengiriman');
     Route::get('/TambahPengiriman', 'AdminController@Tambah_Pengiriman')->name('tambahpengiriman');
     Route::post('CreatingPengiriman', 'AdminController@Menambah_Pengiriman')->name('menambahpengiriman');
+    // Pengelolaan profil user
+    Route::get('/Profile', 'AdminController@Show_Profile')->name('profile');
 });
 
 // Agen
@@ -44,15 +46,19 @@ Route::middleware('can:isAgen')->prefix('agen')->name('agen.')->group(function()
     Route::get('/LiatStok', 'AgenController@Stok_Pupuk')->name('stok');
     // Melihat pengiriman pupuk
     Route::get('/LiatPengiriman', 'AgenController@Liat_Pengiriman')->name('pengiriman');
+    // Pengelolaan profil user
+    Route::get('/Profile', 'AgenController@Show_Profile')->name('profile');
 });
 
 Route::middleware('can:isDriver')->prefix('driver')->name('driver.')->group(function() {
     // Pengiriman
-    Route::get('/LiatPengiriman', 'AgenController@Liat_Pengiriman')->name('pengiriman');
+    Route::get('/LiatPengiriman', 'DriverController@Liat_Pengiriman')->name('pengiriman');
+    // Pengelolaan profil user
+    Route::get('/Profile', 'DriverController@Show_Profile')->name('profile');
 });
 
 Auth::routes([
-    'register' => false
+    // 'register' => false
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

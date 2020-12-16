@@ -15,7 +15,8 @@
     <form action=" {{ route('agen.creating') }} " class="mx-auto w-50" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
-            <input type="hidden" name="id_pengguna" value="2">
+            <input type="hidden" id="id_agen" name="id_agen" value=" {{ Auth::user()->id }} ">
+            <input type="hidden" id="nama_agen" name="nama_agen" value=" {{ Auth::user()->name }} ">
             <div class="form-group">
                 <label for="nama_pupuk">Nama Pupuk</label>
                 <select class="form-control" id="nama_pupuk" name="nama_pupuk">

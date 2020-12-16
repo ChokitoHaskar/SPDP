@@ -15,7 +15,8 @@ class CreateTransaksiPermintaansTable extends Migration
     {
         Schema::create('transaksi_permintaans', function (Blueprint $table) {
             $table->bigIncrements('id_transaksi');
-            $table->integer('id_pengguna');
+            $table->integer('id_agen');
+            $table->string('nama_agen');
             $table->string('nama_pupuk');
             $table->string('jumlah_permintaan');
             $table->date('tanggal_transaksi');
