@@ -44,6 +44,6 @@ Sprint 3:
 - Login Manager (done)
 - Login Driver (done) 
 - Login Agen (done)
-- Registrasi Agen (on-progress)
+- Registrasi Agen (done)
 - Menambah akun Driver (on-progress)
 - Verifikasi akun Agen (on-progress)
