@@ -59,6 +59,7 @@ Route::middleware('can:isAgen')->prefix('agen')->name('agen.')->group(function()
 Route::middleware('can:isDriver')->prefix('driver')->name('driver.')->group(function() {
     // Pengiriman
     Route::get('/LiatPengiriman', 'DriverController@Liat_Pengiriman')->name('pengiriman');
+    Route::post('UpdatePengiriman', 'DriverController@Update_Status')->name('updatestatus');
     // Pengelolaan profil user
     Route::get('/Profile', 'DriverController@Show_Profile')->name('profile');
 });
