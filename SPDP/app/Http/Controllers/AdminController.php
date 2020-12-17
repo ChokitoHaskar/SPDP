@@ -34,7 +34,7 @@ class AdminController extends Controller
 
     public function Rekap_Permintaan()
     {
-        $permintaans = TransaksiPermintaan::all();
+        $permintaans = TransaksiPermintaan::where('status_verifikasi', '!=', 'Belum Diverifikasi')->get();
         return view('manager/riwayatminta', ['permintaans' => $permintaans]);
     }
 
@@ -90,5 +90,35 @@ class AdminController extends Controller
     {
         $profiles = User::where('id', Auth::user()->id)->get();
         return view('page/profil', compact('profiles'));
+    }
+
+    public function Edit_Profile()
+    {
+        $profiles = User::where('id', Auth::user()->id)->get();
+        return view('page/editprofil', compact('profiles'));
+    }
+
+    public function Update_Profile(Request $request)
+    {
+        DB::table('users')->where('id', Auth::user()->id)->update(
+            [
+                'name' => $request->name,
+                'email' => $request->email,
+            ]
+        );
+
+        return redirect('manager/Profile');
+    }
+
+    public function Show_Agen()
+    {
+        $agens = User::where('role', 'agen')->get();
+        return view('manager/dataagen', compact('agens'));
+    }
+
+    public function Show_Drivers()
+    {
+        $drivers = User::where('role', 'driver')->get();
+        return view('manager/datadriver', compact('drivers'));
     }
 }

@@ -47,7 +47,7 @@ class AgenController extends Controller
 
     public function Liat_Pengiriman()
     {
-        $pengirimans = TransaksiPengiriman::all();
+        $pengirimans = TransaksiPengiriman::where('alamat_pengiriman', Auth::user()->alamat)->get();
         return view('agen/Pengiriman', compact('pengirimans'));
     }
 

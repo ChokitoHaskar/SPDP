@@ -11,7 +11,7 @@ class DriverController extends Controller
 {
     public function Liat_Pengiriman()
     {
-        $pengirimans = TransaksiPengiriman::all();
+        $pengirimans = TransaksiPengiriman::where('nama_driver', Auth::user()->name)->get();
         return view('driver/Pengiriman', compact('pengirimans'));
     }
 

@@ -28,7 +28,7 @@
         @can('isManager')
         <div class="modal-footer">
             <center>
-            <button type="button" class="btn btn-dark">Ubah</button>
+                <a href=" {{ Route('manager.editprofile') }} " type="button" class="btn btn-dark">Ubah</a>
             </center>
         </div>
         @endcan

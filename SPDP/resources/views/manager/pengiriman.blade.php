@@ -12,6 +12,7 @@
                     <th class="col-2">Jumlah Pengiriman</th>
                     <th class="border-right border-left col-2">Tanggal Permintaan</th>
                     <th class="col-2">Nama Driver</th>
+                    <th class="border-right border-left col-2">Alamat Agen</th>
                 </tr>
             </thead>
             <tbody class="text-center border-bottom">
@@ -21,6 +22,7 @@
                     <td> {{ $pengiriman->jumlah_pengiriman }} </td>
                     <td> {{ $pengiriman->tanggal_pengiriman }} </td>
                     <td> {{ $pengiriman->nama_driver }} </td>
+                    <td> {{ $pengiriman->alamat_pengiriman }} </td>
                 </tr>
                 @endforeach
             </tbody>

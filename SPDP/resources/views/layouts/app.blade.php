@@ -35,6 +35,8 @@
                 <a href=" {{ route('manager.stok') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Stok Pupuk</a>
                 <a href=" {{ route('manager.pengiriman') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Transaksi Pengiriman</a>
                 <a href=" {{ route('manager.rekap') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Riwayat Permintaan</a>
+                <a href=" {{ route('manager.dataagen') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Data Agen</a>
+                <a href=" {{ route('manager.datadriver') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Data Driver</a>
                 <a href=" {{ route('manager.profile') }} " class="list-group-item list-group-item-action text-light" style="background-color: #3E2F5B">Profil Saya</a>
             </div>
             @elsecan('isAgen')

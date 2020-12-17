@@ -34,6 +34,12 @@ Route::middleware('can:isManager')->prefix('manager')->name('manager.')->group(f
     Route::post('CreatingPengiriman', 'AdminController@Menambah_Pengiriman')->name('menambahpengiriman');
     // Pengelolaan profil user
     Route::get('/Profile', 'AdminController@Show_Profile')->name('profile');
+    Route::get('/Profile/Edit','AdminController@Edit_Profile')->name('editprofile');
+    Route::post('UpdatingProfile', 'AdminController@Update_Profile')->name('updatedprofile');
+    // Pengelolaan Data Agen
+    Route::get('/DataAgen', 'AdminController@Show_Agen')->name('dataagen');
+    // Pengelolaan Data Driver
+    Route::get('/DataDriver', 'AdminController@Show_Drivers')->name('datadriver');
 });
 
 // Agen
